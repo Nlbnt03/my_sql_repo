@@ -1,0 +1,6 @@
+SELECT U.ID, U.NAMESURNAME,
+(select TOP 1 a.ADDRESSTEXT  from ORDERS o
+join ADDRESS a on a.ID = o.ADDRESSID
+where o.USERID = U.ID
+order by O.DATE_ desc) SONADRES
+FROM USERS U
